@@ -1,0 +1,435 @@
+@import 'global';
+@import "adaptive";
+
+
+.slider-block-wrap{
+  width: 100%;
+  padding: 28px 0 100px 0;
+}
+
+.slider-block{
+  width: 100%;
+  position: relative;
+}
+
+.background-image-name{
+  position: absolute;
+  background: url("../images/background-image-name.png") center center no-repeat;
+  background-size: cover;
+  max-width: 1096px;
+  width: 100%;
+  max-height: 117px;
+  height: 100%;
+  z-index: -1;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.background-image-blur{
+  position: absolute;
+  background: url("../images/background-image-blur.png") center center no-repeat;
+  background-size: cover;
+  z-index: -2;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1444px;
+  width: 100%;
+  max-height: 707px;
+  height: 100%;
+}
+
+.players-container{
+  width: 100%;
+  height: 782px;
+  overflow: hidden;
+  position: relative;
+}
+
+.players-wrap{
+    width: 1920px;
+    position: relative;
+    top: 0;
+    left: calc((100% - 1920px)/2);
+    margin-left: -680px;
+    transition: 1.5s;
+}
+
+.slider-list{
+      margin: 151px 0 30px 0;
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+
+      &__element{
+        flex: 0 0 830px;
+        height: 511px;
+        margin: 0 105px;
+        position: relative;
+        transition: 0.7s;
+
+            &_active{
+              flex: 0 0 992px;
+              height: 601px;
+              transition: 1s;
+            }
+      }
+
+      &__image{
+        width: 100%;
+        height: 100%;
+        border-radius: 140px 0;
+
+            &_active{
+              border-radius: 100px 0;
+            }
+
+            &_previous{
+              border-radius: 0 140px;
+            }
+      }
+}
+
+.slider-element{
+
+  &__text{
+    position: absolute;
+    top: 48px;
+    right: 102px;
+  }
+
+  &__header{
+    display: block;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: $ThirdAdditionalColor;
+    z-index: 1;
+    width: 148px;
+  }
+
+  &__paragraph{
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: $ThirdAdditionalColor;
+    z-index: 1;
+    width: 148px;
+    margin: 10px 0 0 0;
+  }
+
+  &__play{
+    width: 125px;
+    height: 125px;
+    margin: 32px 0 0 0;
+    transition: 0.4s;
+
+    &:hover{
+      opacity: 0.7;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+  }
+}
+
+.previous-slider, .next-slider{
+    width: 78px;
+    height: 58px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: 0.3s;
+
+      &:hover > svg path{
+        transition: 0.4s;
+        stroke: #2F7D7D;
+        stroke-opacity: 1;
+        stroke-width: 2px;
+      }
+}
+
+.previous-slider{
+  left: 351px;
+
+      @include large{
+        left: 130px;
+      }
+}
+
+.next-slider{
+  right: 351px;
+
+    @include large{
+       right: 130px;
+    }
+}
+
+.slider-disabled{
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.products-block{
+  width: 100%;
+  background: #F5F5F5;
+  padding: 100px 0 200px 0;
+}
+
+.products-block-wrap{
+  max-width: 1258px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.products-list{
+  display: flex;
+  margin: 40px 0 0 0;
+}
+
+.products-header{
+  position: relative;
+
+    .products-switches{
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      flex-direction: row;
+
+          &__previous, &__next{
+              width: 77px;
+              height: auto;
+              cursor: pointer;
+              transition: 0.3s;
+
+            &:hover {
+              transition: 0.4s;
+              stroke: #2F7D7D;
+              stroke-opacity: 1;
+              stroke-width: 2px;
+            }
+          }
+    }
+
+}
+
+.products-element{
+  width: calc((100% - 90px)/4);
+  margin: 0 15px;
+
+    &:first-child{
+      margin-right: 0;
+    }
+
+    &:last-child{
+      margin-left: 0;
+    }
+
+    &__image{
+      width: 100%;
+      max-height: 271px;
+      height: 100%;
+    }
+
+    &__header{
+      display: inline-block;
+      margin: 16px 0 0 0;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    &__price{
+      display: inline-block;
+      margin: 8px 0 0 0;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    &__buttons{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 50px;
+      width: 100%;
+      margin: 24px 0 0 0;
+
+          .element-buttons__stat{
+            transition: 0.3s;
+
+            &:hover{
+              cursor: pointer;
+              opacity: 0.7;
+              transition: 0.4s;
+            }
+          }
+
+          .element-buttons__more{
+            max-width: 207px;
+            width: 100%;
+            border: 1px solid #333333;
+            border-radius: 0 30px 30px 0;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            padding: 15px 0 15px 24px;
+            box-sizing: border-box;
+            transition: 0.3s;
+            margin: 0 0 0 4px;
+
+              &:hover{
+                cursor: pointer;
+                opacity: 0.7;
+                border: 1px solid #331f30;
+                transition: 0.4s;
+              }
+          }
+    }
+}
+
+.subscribe-wrap{
+  position: relative;
+  overflow: hidden;
+}
+
+.subscription-block{
+  width: 100%;
+  padding: 70px 0 130px 0;
+}
+
+.subscription-block-wrap{
+  max-width: 1258px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.subscription-block-image{
+  position: absolute;
+  max-width: 736px;
+  width: 100%;
+  max-height: 736px;
+  height: 100%;
+  top: 70px;
+  right: -12%;
+  background: url("../images/subsribtion-block-image.png");
+}
+
+.discount-container{
+  max-width: 662px;
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+  position: relative;
+
+      .discount-text{
+        font-weight: 700;
+        font-size: 90px;
+        line-height: 104px;
+        color: #131111;
+        text-shadow: 1px 0 1px #BCBCBC,
+        0 1px 1px #BCBCBC,
+        -1px 0 1px #BCBCBC,
+        0 -1px 1px #BCBCBC;
+      }
+
+      .discount-text-white{
+        color: #F5F5F5;
+        text-shadow: none;
+      }
+}
+
+.discount-images{
+    position: absolute;
+    z-index: -1;
+
+      &__top{
+        top: -55px;
+        left: 40%;
+        background: url("../images/discount-images (2).png") center center no-repeat;
+        max-width: 218px;
+        width: 100%;
+        max-height: 218px;
+        height: 100%;
+      }
+
+      &__down{
+        top: 45px;
+        left: -95px;
+        background: url("../images/discount-images (1).png") center center no-repeat;
+        max-width: 233px;
+        width: 100%;
+        max-height: 233px;
+        height: 100%;
+      }
+}
+
+.subscribe-form{
+    display: flex;
+    flex-direction: column;
+    width: 452px;
+    margin: 20px 0 26px 0;
+
+    &__caption{
+      color: #BCBCBC;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      margin: 16px 0;
+    }
+
+    &__email{
+      height: 32px;
+      background: transparent;
+      border: 0;
+      outline: 0;
+      border-bottom: 1px solid rgb(125, 125, 125, 0.45);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      color: #7D7D7D;
+      caret-color: #7D7D7D;
+      margin: 16px 0;
+
+          &::placeholder{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+            color: #7D7D7D;
+          }
+    }
+
+    &__btn{
+      cursor: pointer;
+      width: 150px;
+      height: 150px;
+      border-radius: 150px;
+      border: none;
+      background: #FFFFFF;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      margin: 40px 0 10px 0;
+      transition: 0.3s;
+
+        &:active{
+          border: 3px solid rgb(125, 125, 125, 0.5);
+        }
+
+        &:hover{
+          background: #ededed;
+          box-shadow: 0 0 10px 0 #ededed;
+          opacity: 0.7;
+          transition: 0.4s;
+        }
+    }
+}
+

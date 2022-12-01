@@ -1,0 +1,27 @@
+$mainFont: 'Raleway';
+$mainColor: #333333;
+$FirstAdditionalColor: #7D7D7D;
+$SecondAdditionalColor: #D8D8D8;
+$ThirdAdditionalColor: #F5F5F5;
+$mainBackgroundColor: #131111;
+
+body{
+  background: $mainBackgroundColor;
+  font-family: $mainFont;
+  color: $mainColor;
+  font-weight: 400;
+}
+
+.wrap{
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h2{
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 52px;
+  margin: 10px 0;
+}
+
