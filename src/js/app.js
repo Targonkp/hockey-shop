@@ -71,7 +71,6 @@ function nextSlider (){
     x++;
     positionEl = positionEl - movingEl;
     playersWrapEl.style.marginLeft = positionEl + 'px';
-    console.log(x);
     enabled();
     changeActiveSlider(x);
 }
@@ -80,7 +79,6 @@ function previousSlider () {
     x--;
     positionEl = positionEl + movingEl;
     playersWrapEl.style.marginLeft = positionEl + 'px';
-    console.log(x);
     enabled();
     changeActiveSlider(x);
 }
